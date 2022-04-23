@@ -18,6 +18,8 @@ module.exports = {
     'import/extensions': ['error', 'ignorePackages', { ts: 'never' }],
     'class-methods-use-this': ['off'],
     'arrow-body-style': ['off'],
+    'no-restricted-syntax': ['off'],
+    quotes: [2, 'single', 'avoid-escape'],
     camelcase: ['off'],
   },
   settings: {
