@@ -1,7 +1,7 @@
-import 'reflect-metadata';
-import { Application } from '@presentation/App';
-import { container } from 'tsyringe';
+import 'reflect-metadata'
+import { Application } from '@presentation/App'
+import { container } from 'tsyringe'
 
-const application = container.resolve(Application);
+const application = container.resolve(Application)
 
 application.initialize()
