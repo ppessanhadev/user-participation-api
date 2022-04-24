@@ -1,14 +1,17 @@
-import { singleton } from 'tsyringe'
+import { inject, singleton } from 'tsyringe'
 import express, { Express } from 'express'
 import cors from 'cors'
+import { Logger } from '@config/Logger'
 
 @singleton()
 export class Application {
   protected app: Express
-
   protected port = process.env.PORT || 3333
 
-  constructor() {
+  constructor(
+    @inject(Logger)
+    private logger: Logger
+  ) {
     this.app = express()
   }
 
@@ -20,15 +23,15 @@ export class Application {
   }
 
   protected setupRoutes() {
-    this.app.get('/', (_req, res) => {
-      return res.send('tudo tranquilo')
-    })
+    this.app.get('/', (_req, res) => res.send('tudo tranquilo'))
   }
 
   public initialize() {
     this.setupMiddleware()
     this.setupRoutes()
 
-    this.app.listen(this.port, () => console.log(`Application running in :${this.port}`))
+    this.app.listen(this.port, () => {
+      this.logger.info(`Application running in: ${this.port}`)
+    })
   }
 }
