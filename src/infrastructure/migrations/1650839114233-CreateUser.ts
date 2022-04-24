@@ -25,7 +25,7 @@ export class CreateUser1650839114233 implements MigrationInterface {
           },
           {
             name: 'participation',
-            type: 'number',
+            type: 'numeric',
             isNullable: false,
           }
         ],
