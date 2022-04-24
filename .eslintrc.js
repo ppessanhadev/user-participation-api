@@ -19,6 +19,7 @@ module.exports = {
     'class-methods-use-this': ['off'],
     'arrow-body-style': ['off'],
     'no-restricted-syntax': ['off'],
+    semi: [2, 'never'],
     quotes: [2, 'single', 'avoid-escape'],
     camelcase: ['off'],
   },
@@ -27,4 +28,4 @@ module.exports = {
       typescript: {},
     },
   },
-};
+}

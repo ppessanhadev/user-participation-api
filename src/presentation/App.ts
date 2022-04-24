@@ -1,21 +1,21 @@
-import { singleton } from 'tsyringe';
+import { singleton } from 'tsyringe'
 import express, { Express } from 'express'
 import cors from 'cors'
 
 @singleton()
 export class Application {
-  protected app: Express;
+  protected app: Express
 
-  protected port = process.env.PORT || 3333;
+  protected port = process.env.PORT || 3333
 
   constructor() {
-    this.app = express();
+    this.app = express()
   }
 
   protected setupMiddleware() {
-    const middlewares = [express.json(), cors()];
+    const middlewares = [express.json(), cors()]
     for (const middleware of middlewares) {
-      this.app.use(middleware);
+      this.app.use(middleware)
     }
   }
 
@@ -26,8 +26,8 @@ export class Application {
   }
 
   public initialize() {
-    this.setupMiddleware();
-    this.setupRoutes();
+    this.setupMiddleware()
+    this.setupRoutes()
 
     this.app.listen(this.port, () => console.log(`Application running in :${this.port}`))
   }
