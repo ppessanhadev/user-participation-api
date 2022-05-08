@@ -16,6 +16,8 @@ module.exports = {
     'arrow-body-style': ['off'],
     'no-restricted-syntax': ['off'],
     'lines-between-class-members': ['off'],
+    'no-useless-constructor': ['off'],
+    'no-empty-function': ['off'],
     semi: [2, 'never'],
     quotes: [2, 'single', 'avoid-escape'],
     camelcase: ['off'],
