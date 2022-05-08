@@ -7,7 +7,7 @@ import * as routers from '@presentation/routes'
 @singleton()
 export class Application {
   private app: Express
-  private port = process.env.PORT || 3333
+  private port = process.env.PORT || 4444
 
   constructor(
     @inject(Logger)
