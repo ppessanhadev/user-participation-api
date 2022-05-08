@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
-    "dev": "DEBUG=API* ts-node-dev --inspect --transpile-only --ignore node_modules -r tsconfig-paths/register src/index.ts",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json -s ./src -o ./dist",
+    "dev": "DEBUG=API* nodemon src/index.ts",
     "prod": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "prisma": {
-    "schema": "src/infra/prisma/schema.prisma"
+    "schema": "src/infrastructure/prisma/schema.prisma"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -26,9 +26,10 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.16",
     "prettier": "^2.6.2",
     "prisma": "^3.0.2",
-    "ts-node-dev": "^1.1.8",
+    "ts-node": "^10.7.0",
     "tsc-alias": "^1.6.6",
     "tsconfig-paths": "^3.14.1",
     "typescript": "^4.6.3"
