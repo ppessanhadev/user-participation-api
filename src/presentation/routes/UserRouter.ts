@@ -1,4 +1,4 @@
-import { ListUserController } from '@presentation/controllers/user/ListUserController'
+import { ListUsersController } from '@presentation/controllers/user/ListUsersController'
 import { Router } from 'express'
 import { inject, singleton } from 'tsyringe'
 
@@ -8,8 +8,8 @@ export class UserRouter {
   private readonly path: string
 
   constructor(
-    @inject(ListUserController)
-    private listUserController: ListUserController
+    @inject(ListUsersController)
+    private listUsersController: ListUsersController,
   ) {
     this.router = Router()
     this.path = '/v1/user'
@@ -21,6 +21,6 @@ export class UserRouter {
   }
 
   private setupRoutes() {
-    this.router.get(this.path, this.listUserController.handleRequest)
+    this.router.get(this.path, this.listUsersController.handleRequest)
   }
 }
