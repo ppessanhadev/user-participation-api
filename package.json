@@ -12,6 +12,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "prisma": {
+    "schema": "src/config/prisma/schema.prisma"
+  },
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/debug": "^4.1.7",
@@ -24,6 +27,7 @@
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.26.0",
     "prettier": "^2.6.2",
+    "prisma": "^3.13.0",
     "ts-node-dev": "^1.1.8",
     "tsc-alias": "^1.6.6",
     "tsconfig-paths": "^3.14.1",
@@ -37,7 +41,6 @@
     "express": "^4.17.3",
     "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
-    "tsyringe": "^4.6.0",
-    "typeorm": "^0.3.6"
+    "tsyringe": "^4.6.0"
   }
 }
