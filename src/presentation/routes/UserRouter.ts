@@ -21,6 +21,8 @@ export class UserRouter {
   }
 
   private setupRoutes() {
-    this.router.get(this.path, this.listUsersController.handleRequest)
+    this.router.get(this.path, (req, res) => {
+      this.listUsersController.handleRequest(req, res)
+    })
   }
 }
